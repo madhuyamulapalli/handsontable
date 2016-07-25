@@ -2274,6 +2274,10 @@ Handsontable.Core = function Core(rootElement, userSettings) {
     let i = instance.countRows() - 1;
 
     while (i >= 0) {
+      if (instance.isEmptyRow(i)) {
+        i--;
+        continue;
+      }
       let j = instance.countCols() - 1;
 
       while (j >= 0) {

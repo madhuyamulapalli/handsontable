@@ -4274,7 +4274,7 @@ var domHelpers = ($__helpers_47_dom_47_element__ = _dereq_("helpers/dom/element"
 var domEventHelpers = ($__helpers_47_dom_47_event__ = _dereq_("helpers/dom/event"), $__helpers_47_dom_47_event__ && $__helpers_47_dom_47_event__.__esModule && $__helpers_47_dom_47_event__ || {default: $__helpers_47_dom_47_event__});
 var HELPERS = [arrayHelpers, browserHelpers, dataHelpers, dateHelpers, featureHelpers, functionHelpers, mixedHelpers, numberHelpers, objectHelpers, settingHelpers, stringHelpers, unicodeHelpers];
 var DOM = [domHelpers, domEventHelpers];
-Handsontable.buildDate = 'Mon Jun 27 2016 09:59:46 GMT+0200 (CEST)';
+Handsontable.buildDate = 'Mon Jul 25 2016 05:30:39 GMT+0530 (IST)';
 Handsontable.packageName = 'handsontable';
 Handsontable.version = '0.26.0';
 var baseVersion = '@@baseVersion';
@@ -5732,6 +5732,10 @@ Handsontable.Core = function Core(rootElement, userSettings) {
     }
     var i = instance.countRows() - 1;
     while (i >= 0) {
+      if (instance.isEmptyRow(i)) {
+        i--;
+        continue;
+      }
       var j = instance.countCols() - 1;
       while (j >= 0) {
         waitingForValidator.addValidatorToQueue();
